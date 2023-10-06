@@ -11,10 +11,15 @@ Señor PAWA y cobertura de eventos
 - Al terminar el evento, en vez del pago recibe un canje.
 ## Etapas
 
-Etapa 1: Evento tecnológico.
-- Jefe Smartphone
-Etapa 2: Evento anime.
-- Jefe --
-Etapa 3: Evento gaming.
-- Jefe --
-
+Etapa 1: 
+Parte 1 - Camino al paradero de Micro
+Parte 2 - Evento Tecnología 
+Jefe: Dude vestido de Celular
+Etapa 2:
+Parte 1 - Camino al Metro
+Parte 2 -Evento Anime 
+Jefe: Cosplayer
+Etapa 3:
+Parte 1 - Camino al Aeropuerto
+Parte 2 - Evento VJ
+Jefe: Streamer que no conozco
