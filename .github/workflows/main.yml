@@ -1,0 +1,15 @@
+name: CI
+on:
+  push:
+    branches: [ main ]
+jobs:
+  install-gb-studio:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install GB Studio
+        id: install-gb-studio
+        run: npm -g install gb-studio-cli
+      - name: Generate Web ROM
+        run: gbstudio build . --web
+        
