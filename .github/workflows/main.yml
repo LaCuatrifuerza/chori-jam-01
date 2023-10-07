@@ -20,7 +20,9 @@ jobs:
         with:
           node-version: '16'
           cache: 'yarn'
-          cache-dependency-path: '**/yarn.lock' # THIS PATTERN did the trick for me.
+          cache-dependency-path: '**/yarn.lock'
+      - name: Install gb-studio
+        run: cd gb-studio && npm_config_yes=true npx yarn-audit-fix
       - name: Generate Installer
         run: cd gb-studio && npm run make:cli && npm link
       - name: Build Web Version
