@@ -26,18 +26,18 @@ jobs:
       - name: Generate Installer
         run: cd gb-studio && npm run make:cli && npm link
       - name: Build Web Version
-        run: gb-studio-cli make:web ${PROJECT_NAME}/${PROJECT_NAME}.gbsproj out/web && zip -r ${PROJECT_NAME}-web.zip out/web
+        run: gb-studio-cli make:web ${PROJECT_NAME}/${PROJECT_NAME}.gbsproj out/web
       - name: Build ROM
-        run: gb-studio-cli make:rom ${PROJECT_NAME}/${PROJECT_NAME}.gbsproj out/rom && zip -r ${PROJECT_NAME}-rom.zip out/rom
+        run: gb-studio-cli make:rom ${PROJECT_NAME}/${PROJECT_NAME}.gbsproj out/rom
       - name: Check Results
         run: ls -last
       - name: Archive Web Game
         uses: actions/upload-artifact@v3
         with:
           name: ${{ env.PROJECT_NAME }}-web.zip
-          path: ${{ env.PROJECT_NAME }}-web.zip
+          path: out/web
       - name: Archive ROM Game
         uses: actions/upload-artifact@v3
         with:
           name: ${{ env.PROJECT_NAME }}-rom.zip
-          path: ${{ env.PROJECT_NAME }}-rom.zip
+          path: out/rom
