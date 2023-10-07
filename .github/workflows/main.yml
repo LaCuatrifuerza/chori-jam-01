@@ -34,8 +34,10 @@ jobs:
       #   run: gb-studio-cli make:rom ${PROJECT_NAME}/${PROJECT_NAME}.gbsproj out/rom
       - name: Archive Web Game
         uses: actions/upload-artifact@v3
+        env:
+          BRANCH_NAME: ${github.ref_name:-github.ref_name}
         with:
-          name: ${{ env.PROJECT_NAME }}-${{ github.ref_name }}-web.zip
+          name: ${{ env.PROJECT_NAME }}-web.zip
           path: out/web
       # - name: Archive ROM Game
       #   uses: actions/upload-artifact@v3
