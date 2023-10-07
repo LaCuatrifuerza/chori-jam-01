@@ -25,12 +25,18 @@ jobs:
         run: gb-studio-cli make:rom ${PROJECT_NAME}/${PROJECT_NAME}.gbsproj out/rom && zip -r ${PROJECT_NAME}-rom.zip out/rom
       - name: Check Results
         run: ls -last
-      - name: Archive production artifacts
+      - name: Archive Web Game
         uses: actions/upload-artifact@v3
         with:
-          name: game-files
+          name: web
           path: |
-            ${PROJECT_NAME}-*.zip
+            ${PROJECT_NAME}-web.zip
+      - name: Archive ROM Game
+        uses: actions/upload-artifact@v3
+        with:
+          name: rom
+          path: |
+            ${PROJECT_NAME}-rom.zip
       # - name: Create Release
       #   id: create_release
       #   uses: actions/create-release@v1
