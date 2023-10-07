@@ -8,8 +8,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install GB Studio
-        id: install-gb-studio
+        id: install-gbs
         run: npm -g install gb-studio-cli
+      - run: ls -last .
       - name: Generate Web ROM
         run: gbstudio build . --web
         
