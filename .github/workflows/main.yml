@@ -28,15 +28,11 @@ jobs:
       - name: Archive Web Game
         uses: actions/upload-artifact@v3
         with:
-          name: web
-          path: |
-            ${PROJECT_NAME}-web.zip
+          path: ${{ env.PROJECT_NAME }}-web.zip
       - name: Archive ROM Game
         uses: actions/upload-artifact@v3
         with:
-          name: rom
-          path: |
-            ${PROJECT_NAME}-rom.zip
+          path: ${{ env.PROJECT_NAME }}-rom.zip
       # - name: Create Release
       #   id: create_release
       #   uses: actions/create-release@v1
