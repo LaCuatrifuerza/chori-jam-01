@@ -5,17 +5,19 @@ on:
 env:
   PROJECT_PATH: DonPAWA-Adventure
 jobs:
-  install-gb-studio:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
       - name: Download GB Studio
         uses: actions/checkout@master
         with:
           repository: chrismaltby/gb-studio
+      - name: Install gb-studio
+        run: npm run make:cli && yarn link
       #- name: Install GB Studio
       #  id: install-gbs
       #  run: npm -g install gb-studio-cli
       # - name: Generate Web ROM
       #  run: gbstudio build ${PROJECT_PATH} --web
-      - run: ls -last
+      - name: Execute Code
+        run: gb-studio-cli -V
