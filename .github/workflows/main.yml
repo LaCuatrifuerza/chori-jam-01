@@ -5,6 +5,7 @@ on:
     paths-ignore: [ '**.md' ]
   pull_request:
     types: [ opened ]
+    paths-ignore: [ '**.md' ]
 env:
   PROJECT_NAME: DonPAWA-Adventure
 jobs:
