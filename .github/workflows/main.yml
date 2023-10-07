@@ -25,4 +25,4 @@ jobs:
       # - name: Generate Web ROM
       #  run: gbstudio build ${PROJECT_PATH} --web
       - name: Build Web Version
-        run: gb-studio-cli make:web ${PROJECT_PATH}/{PROJECT_PATH}.gbsproj out/
+        run: gb-studio-cli make:web ${PROJECT_PATH}/${PROJECT_PATH}.gbsproj out/
