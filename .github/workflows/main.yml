@@ -19,7 +19,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16'
-          cache: 'npm'
+          cache: 'yarn'
+          cache-dependency-path: '**/yarn.lock' # THIS PATTERN did the trick for me.
       - name: Generate Installer
         run: cd gb-studio && npm run make:cli && npm link
       - name: Build Web Version
