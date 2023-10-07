@@ -13,5 +13,5 @@ jobs:
         id: install-gbs
         run: npm -g install gb-studio-cli
       - name: Generate Web ROM
-        run: gbstudio build ${PROJECT_PATH} --web
+        run: gbstudio build --web
         
