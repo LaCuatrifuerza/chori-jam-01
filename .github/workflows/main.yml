@@ -15,14 +15,10 @@ jobs:
         with:
           repository: chrismaltby/gb-studio
           path: gb-studio
-      - name: Using gb-studio
-        run: cd gb-studio
       - name: Install gb-studio
-        run: npm_config_yes=true npx yarn-audit-fix
+        run: cd gb-studio && npm_config_yes=true npx yarn-audit-fix
       - name: Generate Installer
-        run: npm run make:cli && npm link
-      - name: Go back to current dir
-        run: cd ..
+        run: cd gb-studio && npm run make:cli && npm link
       #- name: Install GB Studio
       #  id: install-gbs
       #  run: npm -g install gb-studio-cli
