@@ -8,14 +8,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout project
+        uses: actions/checkout@v4
       - name: Download GB Studio
-        uses: actions/checkout@master
+        uses: actions/checkout@v4
         with:
           repository: chrismaltby/gb-studio
+          path: gb-studio
+      - name: Using gb-studio
+        run: cd gb-studio
       - name: Install gb-studio
         run: npm_config_yes=true npx yarn-audit-fix
       - name: Generate Installer
         run: npm run make:cli && npm link
+      - name: Go back to current dir
+        run: cd ..
       #- name: Install GB Studio
       #  id: install-gbs
       #  run: npm -g install gb-studio-cli
