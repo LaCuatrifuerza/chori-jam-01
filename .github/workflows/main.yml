@@ -23,6 +23,8 @@ jobs:
         run: gb-studio-cli make:web ${PROJECT_NAME}/${PROJECT_NAME}.gbsproj out/web && zip -r ${PROJECT_NAME}-web.zip out/web
       - name: Build ROM
         run: gb-studio-cli make:rom ${PROJECT_NAME}/${PROJECT_NAME}.gbsproj out/rom && zip -r ${PROJECT_NAME}-rom.zip out/rom
+      - name: Check Results
+        run: ls -last
       - name: Archive production artifacts
         uses: actions/upload-artifact@v3
         with:
