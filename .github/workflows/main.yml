@@ -3,7 +3,7 @@ on:
   push:
     branches: [ main ]
 env:
-  PROJECT_PATH: DonPAWA-Adventure
+  PROJECT_NAME: DonPAWA-Adventure
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,10 +19,27 @@ jobs:
         run: cd gb-studio && npm_config_yes=true npx yarn-audit-fix
       - name: Generate Installer
         run: cd gb-studio && npm run make:cli && npm link
-      #- name: Install GB Studio
-      #  id: install-gbs
-      #  run: npm -g install gb-studio-cli
-      # - name: Generate Web ROM
-      #  run: gbstudio build ${PROJECT_PATH} --web
       - name: Build Web Version
-        run: gb-studio-cli make:web ${PROJECT_PATH}/${PROJECT_PATH}.gbsproj out/
+        run: gb-studio-cli make:web ${PROJECT_NAME}/${PROJECT_NAME}.gbsproj out/web && zip -jr ${PROJECT_NAME}-web.zip out/web README.md
+      - name: Build ROM
+        run: gb-studio-cli make:rom ${PROJECT_NAME}/${PROJECT_NAME}.gbsproj out/rom && zip -jr ${PROJECT_NAME}-rom.zip out/rom README.md
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
+      - name: Upload Release Asset
+        id: upload-release-asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./my-artifact.zip
+          asset_name: my-artifact.zip
+          asset_content_type: application/zip
