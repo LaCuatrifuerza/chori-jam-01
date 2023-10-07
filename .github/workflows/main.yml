@@ -13,7 +13,7 @@ jobs:
         with:
           repository: chrismaltby/gb-studio
       - name: Install gb-studio
-        run: npm run make:cli && yarn link
+        run: yarn && npm run make:cli && yarn link
       #- name: Install GB Studio
       #  id: install-gbs
       #  run: npm -g install gb-studio-cli
