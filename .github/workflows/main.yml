@@ -27,8 +27,8 @@ jobs:
         run: cd gb-studio && npm run make:cli && npm link
       - name: Build Web Version
         run: gb-studio-cli make:web ${PROJECT_NAME}/${PROJECT_NAME}.gbsproj out/web
-      - name: Build ROM
-        run: gb-studio-cli make:rom ${PROJECT_NAME}/${PROJECT_NAME}.gbsproj out/rom
+      # - name: Build ROM
+      #   run: gb-studio-cli make:rom ${PROJECT_NAME}/${PROJECT_NAME}.gbsproj out/rom
       - name: Check Results
         run: ls -last
       - name: Archive Web Game
@@ -36,8 +36,8 @@ jobs:
         with:
           name: ${{ env.PROJECT_NAME }}-web.zip
           path: out/web
-      - name: Archive ROM Game
-        uses: actions/upload-artifact@v3
-        with:
-          name: ${{ env.PROJECT_NAME }}-rom.zip
-          path: out/rom
+      # - name: Archive ROM Game
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: ${{ env.PROJECT_NAME }}-rom.zip
+      #     path: out/rom
