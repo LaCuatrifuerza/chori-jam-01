@@ -2,6 +2,8 @@ name: CI
 on:
   push:
     branches: [ main ]
+env:
+  PROJECT_PATH: ./DonPAWA-Adventure.gbsproj
 jobs:
   install-gb-studio:
     runs-on: ubuntu-latest
@@ -10,7 +12,6 @@ jobs:
       - name: Install GB Studio
         id: install-gbs
         run: npm -g install gb-studio-cli
-      - run: ls -last .
       - name: Generate Web ROM
-        run: gbstudio build . --web
+        run: gbstudio build ${PROJECT_PATH} --web
         
