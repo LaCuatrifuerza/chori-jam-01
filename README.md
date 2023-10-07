@@ -4,9 +4,9 @@ Game made just for fun during the [Chile Chori Jam #1](https://itch.io/jam/ccj)
 
 ## Members
 
-@snowpato / Programmer & DevOps
-@MetaruPX / Pixel Artits & Game Design
-@Thennecan / Music Composer
+- @snowpato / Programmer & DevOps
+- @MetaruPX / Pixel Artits & Game Design
+- @Thennecan / Music Composer
 
 ## Engine & Tools
 
