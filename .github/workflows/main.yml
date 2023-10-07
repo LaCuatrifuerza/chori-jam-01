@@ -13,9 +13,9 @@ jobs:
         with:
           repository: chrismaltby/gb-studio
       - name: Install gb-studio
-        run: yarn && npm_config_yes=true npx yarn-audit-fix
+        run: npm_config_yes=true npx yarn-audit-fix
       - name: Generate Installer
-        run: npm run make:cli && yarn link
+        run: npm run make:cli && npm link
       #- name: Install GB Studio
       #  id: install-gbs
       #  run: npm -g install gb-studio-cli
