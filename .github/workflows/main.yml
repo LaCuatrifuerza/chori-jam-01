@@ -34,28 +34,10 @@ jobs:
       - name: Archive Web Game
         uses: actions/upload-artifact@v3
         with:
+          name: ${{ env.PROJECT_NAME }}-web.zip
           path: ${{ env.PROJECT_NAME }}-web.zip
       - name: Archive ROM Game
         uses: actions/upload-artifact@v3
         with:
+          name: ${{ env.PROJECT_NAME }}-rom.zip
           path: ${{ env.PROJECT_NAME }}-rom.zip
-      # - name: Create Release
-      #   id: create_release
-      #   uses: actions/create-release@v1
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.API_TOKEN }}
-      #   with:
-      #     tag_name: ${{ github.ref }}
-      #     release_name: Release ${{ github.ref }}
-      #     draft: false
-      #     prerelease: false
-      # - name: Upload Release Asset
-      #   id: upload-release-asset 
-      #   uses: actions/upload-release-asset@v1
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.API_TOKEN }}
-      #   with:
-      #     upload_url: ${{ steps.create_release.outputs.upload_url }}
-      #     asset_path: ./my-artifact.zip
-      #     asset_name: my-artifact.zip
-      #     asset_content_type: application/zip
