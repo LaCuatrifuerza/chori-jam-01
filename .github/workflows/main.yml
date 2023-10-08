@@ -1,6 +1,4 @@
-# main.yml
----
-name: CI
+name: Create GameBoy Binaries
 on:
   push:
     branches: [ main ]
