@@ -7,7 +7,7 @@ on:
     types:
       - "completed"
     workflows:
-      - "CI"
+      - "Create GameBoy Binaries"
 
 jobs:
   comment-on-pr:
