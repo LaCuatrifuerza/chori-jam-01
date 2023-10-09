@@ -24,11 +24,10 @@ jobs:
               # 🚀 Binaries
 
               ✅ The build was successfully executed. Here is/are the file(s):
-              
-                | Artifacts |
-                | :-------- |
+
+
             suffix: |-
               
               Please test it before merging 👌.
-            format: ({name})[{url}]
+            format: \- ⬇️ ({name})[{url}]
             addTo: pullandissues
