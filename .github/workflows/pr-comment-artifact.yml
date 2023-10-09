@@ -28,7 +28,9 @@ jobs:
               | **Artifacts** |
               | --------  |
             suffix: |-
-              \
+              &nbsp;
+
               Please test it before merging 👌.
-            format: \| ⬇️ [{name}]({url}) \|
+            format: |-
+              | ⬇️ [{name}]({url}) |
             addTo: pullandissues
