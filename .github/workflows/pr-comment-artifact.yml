@@ -25,7 +25,9 @@ jobs:
 
               ✅ The build was successfully executed. Here is/are the file(s):
               
+                | Artifacts |
+                | :-------- |
             suffix: |-
               Please test it before merging 👌.
-            format: name
+            format: \| ({name})[{url}] \|
             addTo: pullandissues
