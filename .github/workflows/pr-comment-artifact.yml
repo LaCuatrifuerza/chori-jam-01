@@ -20,7 +20,12 @@ jobs:
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-            prefix: Here are the artifacts 
-            suffix: Have a nice day.
+            prefix: |-
+              # 🚀 Binaries
+
+              ✅ The build was successfully executed. Here is/are the file(s):
+              
+            suffix: |-
+              Please test it before merging 👌.
             format: name
             addTo: pullandissues
