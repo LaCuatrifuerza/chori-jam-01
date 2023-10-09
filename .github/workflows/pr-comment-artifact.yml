@@ -23,11 +23,11 @@ jobs:
             prefix: |-
               # 🚀 Binaries
 
-              ✅ The build was successfully executed. Here is/are the file(s):
+              ✅ The build was successfully executed. 
 
-
+              - File(s).
             suffix: |-
-              
               Please test it before merging 👌.
-            format: \- ⬇️ ({name})[{url}]
+            format: |-
+              - ⬇️ ({name})[{url}]
             addTo: pullandissues
