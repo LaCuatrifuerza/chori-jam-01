@@ -3336,7 +3336,8 @@
             "height": 18,
             "imageWidth": 1288,
             "imageHeight": 144,
-            "filename": "platform_path.png"
+            "filename": "platform_path.png",
+            "tileColors": []
         },
         {
             "id": "72ec68a9-4a3f-47b6-abe1-8e11a71bd7ac",
@@ -6985,7 +6986,7 @@
         }
     ],
     "settings": {
-        "startSceneId": "a2fd31e9-640c-4d80-b49d-1bc5d578df13",
+        "startSceneId": "506a3459-3d34-45de-b20d-dc804fa8618c",
         "startX": 9,
         "startY": 9,
         "startMoveSpeed": 1,
@@ -6993,7 +6994,7 @@
         "startDirection": "right",
         "showCollisions": true,
         "showConnections": true,
-        "worldScrollX": 353,
+        "worldScrollX": 6,
         "worldScrollY": 0,
         "zoom": 100,
         "customColorsEnabled": true,
