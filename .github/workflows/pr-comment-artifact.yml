@@ -26,8 +26,9 @@ jobs:
               ✅ The build was successfully executed.
 
               | **Artifacts** |
+              | --------  |
             suffix: |-
-
+              \
               Please test it before merging 👌.
             format: \| ⬇️ [{name}]({url}) \|
             addTo: pullandissues
